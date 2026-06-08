@@ -1,0 +1,52 @@
+.mui-navbar {
+  background-color: #F5F5F5 !important; 
+  box-shadow: none !important; 
+  border-bottom: 1px solid #E0E0E0 !important;
+}
+
+.mui-toolbar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.logo-container {
+  display: flex; 
+  align-items: center; 
+  text-decoration: none; 
+}
+
+.logo-img {
+  height: 35px; 
+  width: auto; 
+  margin-right: 12px; 
+}
+
+.logo-text {
+  color: #D4AF37 !important; 
+  font-weight: bold !important; 
+  font-size: 1.2rem !important; 
+  letter-spacing: 1px !important; 
+}
+
+.mui-nav-links {
+  display: flex;
+  gap: 24px; 
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #777777; 
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #D4AF37; 
+}
+
+.mui-nav-icons {
+  display: flex;
+  gap: 8px;
+}
