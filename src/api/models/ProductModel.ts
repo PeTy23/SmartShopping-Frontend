@@ -4,6 +4,9 @@ export interface ProductModel {
   description: string
   imageUrl: string
   price: number
+  isInStock: boolean
+  rating: number
+  isOnSale: boolean
   categories: string[]
 }
 
@@ -12,5 +15,8 @@ export interface ProductInput {
   description: string
   imageUrl: string
   price: number
+  isInStock: boolean
+  rating: number
+  isOnSale: boolean
   categoryIds: number[]
 }

@@ -11,8 +11,8 @@ export const productsApi = {
      return data.map(toProduct)
   },
 
-  getById: async (id: number): Promise<ProductModel> => {
-    return await http.get<ProductModel>(`${BASE_PATH}/${id}`);
+  getById: async (id: number): Promise<Product> => {
+    return toProduct(await http.get<ProductModel>(`${BASE_PATH}/${id}`));
   },
 
   // 2. SECRETUL ESTE AICI: Acum acceptă ProductInput la creare!

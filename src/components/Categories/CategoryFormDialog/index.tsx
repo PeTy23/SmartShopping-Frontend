@@ -12,8 +12,6 @@ import {
 import type { Category } from "../../shared/types/Category";
 import { categoriesApi } from "../../../api/clients/CategoryApiClient";
 
-
-
 interface CategoryFormDialogProps {
   category: Category | null;
   onClose: () => void;

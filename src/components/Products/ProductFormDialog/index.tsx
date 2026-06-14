@@ -8,11 +8,15 @@ import {
   DialogContent,
   DialogTitle,
   FormControl,
+  FormControlLabel,
   InputLabel,
   MenuItem,
+  Rating,
   Select,
   Stack,
+  Switch,
   TextField,
+  Typography,
 } from '@mui/material'
 import { categoriesApi } from '../../../api/clients/CategoryApiClient';
 import { productsApi } from '../../../api/clients/ProductApiClient';
@@ -37,6 +41,10 @@ function ProductFormDialog({
   const [imageUrl, setImageUrl] = useState(product?.imageUrl ?? '')
   const [price, setPrice] = useState(product ? String(product.price) : '')
   const [categoryIds, setCategoryIds] = useState<number[]>([])
+  const [isInStock, setIsInStock] = useState(product?.isInStock ?? true)
+  const [isOnSale, setIsOnSale] = useState(product?.isOnSale ?? false)
+  const [rating, setRating] = useState<number>(product?.rating ?? 0)
+
 
   const [allCategories, setAllCategories] = useState<CategoryModel[]>([])
   const [error, setError] = useState('')
@@ -69,6 +77,9 @@ function ProductFormDialog({
         imageUrl,
         price: Number(price),
         categoryIds,
+        isInStock,
+        isOnSale,
+        rating
       }
       if (isEditing) {
         await productsApi.update(product.id, data)
@@ -145,6 +156,43 @@ function ProductFormDialog({
               ))}
             </Select>
           </FormControl>
+          <Box sx={{ display: 'flex', gap: 4, alignItems: 'center', mt: 2 }}>
+            <FormControlLabel
+              control={
+                <Switch 
+                  checked={isInStock} 
+                  onChange={(e) => setIsInStock(e.target.checked)} 
+                  color="primary" 
+                />
+              }
+              label="In Stock"
+            />
+            <FormControlLabel
+              control={
+                <Switch 
+                  checked={isOnSale} 
+                  onChange={(e) => setIsOnSale(e.target.checked)} 
+                  color="error" 
+                />
+              }
+              label="On Sale (Promo)"
+            />
+          </Box>
+
+          <Box>
+            <Typography component="legend" variant="caption" color="text.secondary">
+              Product Rating
+            </Typography>
+            <Rating
+              value={rating}
+              precision={0.1}
+              onChange={(event, newValue) => {
+                setRating(newValue || 0);
+              }}
+            />
+          </Box>
+
+
         </Stack>
       </DialogContent>
       <DialogActions>

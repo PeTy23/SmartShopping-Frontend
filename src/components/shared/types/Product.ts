@@ -9,6 +9,9 @@ export interface Product {
   priceLabel: string
   categories: string[]
   categoriesLabel: string
+  isInStock: boolean
+  rating: number
+  isOnSale: boolean
 }
 
 export function toProduct(dto: ProductModel): Product {
@@ -21,5 +24,8 @@ export function toProduct(dto: ProductModel): Product {
     priceLabel: `${dto.price.toFixed(2)} RON`,
     categories: dto.categories,
     categoriesLabel: dto.categories.join(', '),
+    isInStock: dto.isInStock ?? true, 
+    rating: dto.rating ?? 0,
+    isOnSale: dto.isOnSale ?? false
   }
 }
