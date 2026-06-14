@@ -24,6 +24,7 @@ import {
     Rating,
     Chip
 } from "@mui/material";
+import { useLocation } from 'react-router-dom';
 import { useEffect, useMemo, useState } from "react";
 import { productsApi } from "../../api/clients/ProductApiClient";
 import type { Product } from "../shared/types/Product";
@@ -44,6 +45,20 @@ function Shop() {
     const [minRating, setMinRating] = useState<number>(0);
 
     const { addItem } = useCart()
+
+    const location = useLocation();
+
+    // Acest useEffect "ascultă" bara de adrese
+    useEffect(() => {
+        // Extragem parametrii din URL
+        const queryParams = new URLSearchParams(location.search);
+        const categoryFromUrl = queryParams.get('category');
+
+        // Dacă găsim o categorie în URL, o adăugăm automat în lista de bife
+        if (categoryFromUrl) {
+            setSelectedCategory([categoryFromUrl]); // Bifăm doar categoria selectată
+        }
+    }, [location.search]); // Se va rula de fiecare dată când se schimbă URL-ul
 
     const allCategories = useMemo(() => {
         const categoriesSet = new Set<string>();

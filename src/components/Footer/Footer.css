@@ -1,0 +1,85 @@
+.footer-wrapper {
+    background-color: #FFFFFF;
+    margin-top: 80px;
+}
+
+
+/* --- FOOTER BOTTOM SECTION --- */
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 95%;
+    padding: 0 16px;
+}
+
+/* Brand Area */
+.footer-brand {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.footer-logo-img {
+    height: 30px;
+    width: auto;
+    margin-right: 12px;
+}
+
+.footer-logo-text {
+    color: #D4AF37 !important;
+    font-weight: bold !important;
+    font-size: 1.2rem !important;
+    letter-spacing: 1px !important;
+}
+
+.footer-brand-desc {
+    color: #666666 !important;
+    line-height: 1.6 !important;
+    margin-bottom: 24px !important;
+}
+
+.social-icons {
+    display: flex;
+    gap: 8px;
+}
+
+.social-btn {
+    border: 1px solid #EEEEEE !important;
+    color: #333333 !important;
+    transition: all 0.2s ease !important;
+}
+
+.social-btn:hover {
+    border-color: #D4AF37 !important;
+    color: #D4AF37 !important;
+    background-color: transparent !important;
+}
+
+/* Links Area */
+.footer-list-title {
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    color: #1A1A1A !important;
+    letter-spacing: 1.5px !important;
+    margin-bottom: 16px !important;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-list a {
+    text-decoration: none;
+    color: #666666;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.footer-list a:hover {
+    color: #D4AF37;
+}

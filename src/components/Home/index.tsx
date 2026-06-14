@@ -2,6 +2,8 @@ import { Box, Typography, Button, Stack } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import './Home.css';
 import Bestsellers from './BestSellers';
+import ShopByCategory from './ShopByCategory';
+import Newsletter from '../NewsLetter';
 
 function Home() {
   return (
@@ -63,7 +65,9 @@ function Home() {
 
       </Box>
     </Box>
+    <ShopByCategory />
     <Bestsellers />
+    <Newsletter />
     </>
   );
 }

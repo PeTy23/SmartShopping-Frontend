@@ -1,0 +1,89 @@
+.category-section-container {
+    max-width: 1400px;
+    margin: 80px auto;
+    padding: 0 5%;
+}
+
+.category-section-title {
+    font-size: 2.5rem !important;
+    font-weight: 500 !important;
+    color: #1A1A1A;
+    letter-spacing: -0.5px;
+}
+
+.category-section-subtitle {
+    color: #666666 !important;
+    margin-top: 8px !important;
+}
+
+.view-all-btn {
+    color: #1A1A1A !important;
+    text-transform: none !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    padding-bottom: 8px !important;
+}
+
+.view-all-btn:hover {
+    color: #D4AF37 !important;
+    background-color: transparent !important;
+}
+
+/* Cardul Categoriei - Efect Editorial */
+.category-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4; /* Card mai înalt (portret) */
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+.category-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Tranziție foarte lentă pentru lux */
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Stratul întunecat care stă permanent peste poză */
+.category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
+    transition: background 0.4s ease;
+}
+
+.category-name {
+    position: absolute;
+    bottom: 32px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.75rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.4s ease;
+}
+
+/* --- EFECTELE LA TRECEREA MOUSE-ULUI --- */
+
+.category-card:hover .category-image {
+    transform: scale(1.05); /* Zoom foarte fin */
+}
+
+.category-card:hover .category-overlay {
+    /* Facem baza pozei mai neagră ca textul auriu să "sară" în ochi */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.85) 100%);
+}
+
+.category-card:hover .category-name {
+    color: #D4AF37; /* Auriu */
+    transform: translateY(-8px); /* Se ridică puțin */
+}

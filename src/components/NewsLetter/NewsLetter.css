@@ -1,0 +1,59 @@
+.newsletter-card {
+    background-color: #FAFAFA;
+    border: 1px solid #EEEEEE;
+    border-radius: 24px;
+    padding: 64px;
+    max-width: 1400px;
+    margin: 80px auto 64px auto; /* Margin top adăugat pentru a respira sub secțiunile anterioare */
+    width: 95%;
+}
+
+.newsletter-kicker {
+    color: #D4AF37 !important;
+    font-weight: 600 !important;
+    letter-spacing: 2px !important;
+    display: block;
+    margin-bottom: 8px !important;
+}
+
+.newsletter-title {
+    font-weight: 500 !important;
+    color: #1A1A1A !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.5px !important;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.newsletter-input .MuiOutlinedInput-root {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+}
+
+.newsletter-input .MuiOutlinedInput-notchedOutline {
+    border-color: #E0E0E0;
+}
+
+.newsletter-btn {
+    background-color: #D4AF37 !important;
+    color: #FFFFFF !important;
+    border-radius: 8px !important;
+    text-transform: none !important;
+    font-weight: 600 !important;
+    padding: 0 32px !important;
+    white-space: nowrap;
+}
+
+.newsletter-btn:hover {
+    background-color: #b8962d !important;
+}
+
+.newsletter-spam-text {
+    color: #888888 !important;
+    display: block;
+    margin-left: 4px !important;
+}

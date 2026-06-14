@@ -11,9 +11,11 @@ import NotFound from './components/NotFound';
 import Shop from './components/shop';
 import CartProvider from './context/CartContext/CartProvider';
 import CartDrawer from './components/CartDrawer';
+import Footer from './components/Footer';
 
 function App() {
   return (
+    <>
       <CartProvider> 
         <Box className="app">
           <NavBar />
@@ -25,9 +27,12 @@ function App() {
             <Route path="/promotions" element={<Promotions />}/>
             <Route path="*" element={<NotFound /> } />
           </Routes>
+          <Footer />
           <CartDrawer />
       </Box>
     </CartProvider>
+    
+    </>
   );
 }
 
