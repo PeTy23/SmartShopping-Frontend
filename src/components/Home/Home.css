@@ -1,10 +1,13 @@
+/* Containerul tău original (doar am adăugat position: relative) */
 .home-hero {
     box-sizing: border-box;
     min-height: 80vh;
-    width: 150vh;
+    width: 95%; /* Modificat din 150vh pentru a fi responsive pe orice ecran */
+    max-width: 1400px;
     margin: 24px auto;
     border-radius: 24px;
     overflow: hidden;
+    position: relative;
     
     background-image: 
         linear-gradient(
@@ -18,14 +21,121 @@
       rgba(245, 245, 245, 0.05) 90%,      
       transparent 100%
         ),
-        url('../../assets/bg.png'); 
+        url('../../assets/bg2.jpg'); 
 
     background-size: cover; 
     background-position: center right; 
     background-repeat: no-repeat;
 
-   
     display: flex;
     align-items: center; 
     padding-left: 8%;
+}
+
+/* Limităm lățimea textului ca să nu se ducă peste imaginea din dreapta */
+.hero-content {
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* Spațiu general între elemente */
+}
+
+/* 1. Insigna */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #333;
+    width: fit-content;
+}
+
+.hero-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #D4AF37;
+    border-radius: 50%;
+}
+
+/* 2. Titlul */
+.hero-title {
+    font-size: 4.5rem !important;
+    font-weight: 500 !important;
+    line-height: 1.1 !important;
+    color: #1A1A1A; /* Antracit, mai elegant decât negru pur */
+    letter-spacing: -1px !important;
+    margin-bottom: 8px !important;
+}
+
+.highlight-text {
+    color: #D4AF37; /* Auriul tău */
+}
+
+/* 3. Subtitlul */
+.hero-subtitle {
+    font-size: 1.15rem !important;
+    color: #555555 !important;
+    line-height: 1.6 !important;
+    margin-bottom: 16px !important;
+}
+
+/* 4. Butoanele */
+.hero-buttons {
+    margin-bottom: 48px !important; /* Spațiu mare până la statistici */
+}
+
+.btn-primary {
+    background-color: #D4AF37 !important;
+    color: #fff !important;
+    border-radius: 50px !important;
+    padding: 12px 32px !important;
+    text-transform: none !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-primary:hover {
+    background-color: #b8962d !important;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border-color: #1A1A1A !important;
+    color: #1A1A1A !important;
+    border-radius: 50px !important;
+    padding: 12px 32px !important;
+    text-transform: none !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+/* 5. Statisticile */
+.hero-stats {
+    margin-top: auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 32px;
+}
+
+.stat-number {
+    font-size: 1.75rem !important;
+    font-weight: 600 !important;
+    color: #D4AF37 !important;
+    margin-bottom: 4px !important;
+}
+
+.stat-label {
+    font-size: 0.85rem !important;
+    color: #666666 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
