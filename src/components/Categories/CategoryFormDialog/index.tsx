@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   Alert,
+  Box,
   Button,
   Dialog,
   DialogActions,
@@ -27,6 +28,7 @@ function CategoryFormDialog({
 
   const [name, setName] = useState(category?.name ?? "");
   const [description, setDescription] = useState(category?.description ?? "");
+  const [imageUrl, setImageUrl] = useState(category?.imageUrl ?? "");
   const [error, setError] = useState("");
   const [saving, setSaving] = useState(false);
 
@@ -38,7 +40,7 @@ function CategoryFormDialog({
     setSaving(true);
     setError("");
     try {
-      const data = { name, description };
+      const data = { name, description, imageUrl };
       if (isEditing) {
         await categoriesApi.update(category.id, data);
       } else {
@@ -70,7 +72,21 @@ function CategoryFormDialog({
             fullWidth
             multiline
             rows={3}
+          />  
+          <TextField
+            label="Image URL"
+            value={imageUrl}
+            onChange={(e) => setImageUrl(e.target.value)}
+            fullWidth
           />
+          {imageUrl !== "" && (
+            <Box
+              component="img"
+              src={imageUrl}
+              alt="Category Preview"
+              sx={{ width: 80, height: 80, objectFit: "cover", borderRadius: 1 }}
+            />
+          )}
         </Stack>
       </DialogContent>
       <DialogActions>

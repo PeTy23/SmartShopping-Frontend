@@ -1,9 +1,11 @@
 import { Box, Typography, Button, Stack } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import './Home.css';
+import Bestsellers from './BestSellers';
 
 function Home() {
   return (
+    <>
     <Box className="home-hero">
       <Box className="hero-content">
         
@@ -61,6 +63,8 @@ function Home() {
 
       </Box>
     </Box>
+    <Bestsellers />
+    </>
   );
 }
 
